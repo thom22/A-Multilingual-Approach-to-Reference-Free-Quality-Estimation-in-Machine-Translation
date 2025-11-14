@@ -1,9 +1,6 @@
 # A-Multilingual-Approach-to-Reference-Free-Quality-Estimation-in-Machine-Translation
 
 
-# Machine Translation Quality Estimation - Updated Implementation
-
-**A comprehensive MT Quality Estimation system using real WMT20 MLQE data with advanced embeddings and multiple modeling approaches.**
 
 ## Overview
 
