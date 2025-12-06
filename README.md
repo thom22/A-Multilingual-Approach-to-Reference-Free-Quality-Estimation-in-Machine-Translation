@@ -1,34 +1,8 @@
 # A-Multilingual-Approach-to-Reference-Free-Quality-Estimation-in-Machine-Translation
 
+<img width="3456" height="4608" alt="poster_vertical(36x48) pptx" src="https://github.com/user-attachments/assets/96895e5a-711b-43fc-8e7b-c754e98c42fc" />
 
-
-## Overview
-
-This implementation works with your **downloaded WMT20 MLQE dataset** and provides:
-- Comprehensive EDA with publication-quality visualizations
--  Advanced preprocessing with **LaBSE** and **XLM-RoBERTa** embeddings
--  Comparison of **8+ regression models**
--  Transformer-based model (XLM-RoBERTa fine-tuning)
--  Support for 3 language pairs: **en-de** (high), **ro-en** (medium), **si-en** (low)
-
-## Key Question: Should I Use Cleaned or Original Text?
-
-**Recommendation: Use cleaned text (`src_clean`, `mt_clean`)**
-
-**Why?**
-1. **Better embeddings**: Cleaned text produces more consistent embeddings
-2. **Faster processing**: Shorter text = faster tokenization
-3. **Less noise**: Removes URLs, normalizes Unicode
-4. **Your data prep already did this**: The notebook you shared already created these columns
-
-**When to use original (`src`, `mt`)?**
-- If you want to preserve exact formatting
-- If URLs or special characters are meaningful
-- For final production system comparison
-
-**Current implementation**: All scripts default to using **cleaned text** but can be easily switched by changing `use_cleaned_text=False` in the code.
-
-## Your Data Structure
+## Data Structure
 
 ```
 datasets/final_dataset/
@@ -106,7 +80,7 @@ python regression_models.py
 python transformer_qe_model.py
 ```
 
-## What You'll Get
+## Outputs
 
 ### Data Files (`data/`)
 - `*_combined.csv` - Combined datasets (7K train + 1K val + 1K test per language)
@@ -160,12 +134,9 @@ python transformer_qe_model.py
 - `transformer_results.csv` - Transformer model metrics
 - `best_transformer_model.pt` - Trained model checkpoint
 
-### Transformer Model:
-- **XLM-RoBERTa**: Pearson ~0.55-0.75
 
-*Note: Actual performance depends on data quality and hyperparameters*
 
-##  Scripts Description
+###  Scripts Description
 
 ### 1. `load_real_data.py`
 **What it does:**
@@ -219,4 +190,5 @@ python transformer_qe_model.py
 5. Random Forest
 6. Gradient Boosting
 7. XGBoost
+##### 8. Proposed Final Model ( XLM-RoBERTa Model ) 
 
